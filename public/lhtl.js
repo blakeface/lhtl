@@ -32,36 +32,34 @@ function handleHelpClick() {
 // POMODORO
 var onBreak = false;
 const timerEl = document.querySelector('#timer')
-const noticeEl = document.querySelector('#notice')
-const mainEl = document.querySelector('main')
-const footerEl = document.querySelector('footer')
+const onBreakEls = document.querySelectorAll('.onbreak-target');
+
+// format timer widget
 function formatTime(timer){
 	return `${pad(parseInt(timer / 60, 10))}:${pad(parseInt(timer % 60, 10))}`
 }
 function pad(num) {
 	return (num < 10 ? '0' : '') + num
 }
+
+// timer functionality
 function initTimer(duration, timerEl){
 	var timer = duration;
 	var timerInterval = setInterval(function () {
 		timerEl.innerHTML = formatTime(timer);
 
-		console.log(timer)
+		// tick timer
 		if (--timer < 0) {
 			clearInterval(timerInterval);
-			if (onBreak) {
-				noticeEl.classList.remove('on-break');
-				mainEl.classList.remove('on-break');
-				footerEl.classList.remove('on-break');
-			}
-			else {
-				noticeEl.classList.add('on-break');
-				mainEl.classList.add('on-break')
-				footerEl.classList.add('on-break')
-			}
-			initTimer(onBreak ? (30 * 60) : (5), timerEl);
+
+			// update view
+			if (onBreak) onBreakEls.forEach(el => el.classList.remove('on-break'))
+			else onBreakEls.forEach(el => el.classList.add('on-break'))
+
+			// reset timer
+			initTimer(onBreak ? (30 * 60) : (5 * 60), timerEl);
 			onBreak = !onBreak
 		}
 	}, 1000);
 }
-window.onload = () => initTimer(2, timerEl)
+window.onload = () => initTimer(30 * 60, timerEl)
