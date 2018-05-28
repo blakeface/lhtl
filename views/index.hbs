@@ -1,14 +1,30 @@
-<h1>LHTL</h1>
-<p>
-	Hello. This innocuous site is an example on how you can utilize some of the techniques from the <a href="https://www.coursera.org/learn/learning-how-to-learn/home/welcome">Learning How To Learn</a> MOOC.
-</p>
-<p>Here we have a random sample of SAT words. Using nothing but your noggin, attempt to memorize the words below and <i>recall</i> them. If button pushing is your sort of thing, I've provided a series of them to facilitate a better learning environment</p>
-<p>Since you're the perceptive type, you've already taken note of the ticking clock. This is a forceful use of the Pomodoro Technique.</p>
+<main class="container">
+	<h1>LHTL</h1>
+	<p>
+		Hello and welcome to an innocuous site demonstrating the neurological gold presented in the <a href="https://www.coursera.org/learn/learning-how-to-learn/home/welcome">Learning How To Learn</a> MOOC.
+	</p>
+	<p>Below is an methodological sample of very very bombastic words. Read them, learn them, <i>recall</i> them. If button pushing is your sort of thing, I've provided a couple to facilitate a better learning environment.</p>
+	<p>Since you're most likely the perceptive type, you've already taken note of the ticking clock. This is a forceful use of the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Technique</a>. This site isn't a democracy, you have no say in this. When the timer ends, the site dies... kinda</p>
 
-{{#each words}}
-	<div class="word-wrap">
-		<p class="word">{{word}} <span class="category">{{category}}</span></p>
-		<p>{{definition}}</p>
-		<p><span class="example-header">Example: </span>{{example}}</p>
+	<div class="buttons">
+		<button id="test">Test your learning</button>
+		<button id="help">A scintilla of help, please</button>
 	</div>
-{{/each}}
+
+	<h2>Your dictionary:</h2>
+	{{#each words}}
+		<div class="word-wrap">
+			<p class="word">{{word}} <span class="category help-target test-target">{{category}}</span></p>
+			<p class="test-target">{{definition}}</p>
+			<p class="example help-target test-target"><span class="example-header">Example: </span>{{example}}</p>
+		</div>
+	{{/each}}
+</main>
+
+<div id="notice">
+	<h2>Take A Break!</h2>
+</div>
+
+<footer>
+	<div id="timer">30:00</div>
+</footer>
