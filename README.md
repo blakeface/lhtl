@@ -5,5 +5,7 @@ I took a [MOOC](https://www.coursera.org/learn/learning-how-to-learn/home/welcom
 ##Specs:
 * Express (using express generator)
 * Promises
-* HBJ engine
+* A smidgen of jQuery
 * Hosted with Heroku
+
+Was at once hosted at [https://shrouded-reef-54663.herokuapp.com](https://shrouded-reef-54663.herokuapp.com)
