@@ -2,13 +2,13 @@
 
 //visState = default, help, test
 let visState = 'default';
-const test = document.querySelector('#test')
-const help = document.querySelector('#help')
+const testEl = document.querySelector('#test')
+const helpEl = document.querySelector('#help')
 const testTarget = document.querySelectorAll('.test-target')
 const helpTarget = document.querySelectorAll('.help-target')
 
-test.addEventListener('click', handleTestClick)
-help.addEventListener('click', handleHelpClick)
+testEl.addEventListener('click', handleTestClick)
+helpEl.addEventListener('click', handleHelpClick)
 
 function handleTestClick() {
 	if (visState == 'default') {
