@@ -1,8 +1,21 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.word {
+	font-size: 2.4rem;
 }
 
-a {
-  color: #00B7FF;
+.word-wrap {
+	margin-top: 1.5em;
+}
+
+.word-wrap p {
+	margin: 0 0;
+}
+
+.example-header, .word {
+	font-weight: bold;
+}
+
+.category {
+	font-style: italic;
+	font-size: initial;
+	font-weight: initial;
 }
